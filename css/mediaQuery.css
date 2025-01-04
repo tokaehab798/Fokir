@@ -1,0 +1,102 @@
+@media (max-width: 768px) {
+
+    .textContent {
+        width: 100%;
+    }
+
+    .theContent {
+        flex-wrap: wrap;
+    }
+
+    .cards {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .images {
+        width: 100%;
+    }
+
+    .about {
+        flex-wrap: wrap;
+    }
+
+    .aboutImage {
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    #testimonial .textContiner {
+        flex-direction: column;
+        padding: 20px;
+        width: 90%; /* Adjust container width for smaller screens */
+    }
+
+    #testimonial .img-border-radius {
+        width: 60%; /* Adjust image size */
+        margin-bottom: 20px; /* Add space below the image */
+    }
+
+    #testimonial .icons i {
+        font-size: 20px; /* Smaller icon size for responsiveness */
+    }
+
+    #testimonial .positioning {
+        width: 250px;
+        height: 250px;
+        top: 0%;
+        left: -37%; 
+    }
+    .blogs{
+        flex-wrap: wrap;
+    }
+    .blogContent{
+        width: 100%;
+    }
+
+}
+
+/* For Small Desktops */
+@media (max-width: 992px) {
+    .cards {
+        width: 45%;
+        /* Two cards per row */
+    }
+
+    .images {
+        width: 48%;
+        /* Two images per row */
+    }
+}
+
+/* For Large Phones */
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .mainSection .content h1 {
+        font-size: 28px;
+    }
+
+    .textContent h2 {
+        font-size: 24px;
+    }
+
+    .cards {
+        width: 100%;
+        /* One card per row */
+    }
+
+    .images {
+        width: 100%;
+        /* Full-width images */
+    }
+    .theContent {
+        flex-wrap: wrap;
+    }
+
+    .cards {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
