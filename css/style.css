@@ -3,7 +3,10 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+
+}
+.body,html{
+    scroll-behavior: auto !important;
 
 }
 
@@ -11,7 +14,13 @@
 :root {
     --mainColor: #FF305B;
 }
-
+ @font-face {
+    font-family: 'SourceCodePro' ;
+    src: url(../fonts/Source_Code_Pro/static/SourceCodePro-Light.ttf);
+ }
+ .content p{
+    font-family:  'SourceCodePro' ;
+ }
 .mainColor {
     color: var(--mainColor);
 }
@@ -24,7 +33,6 @@ li a {
     font-size: large !important;
 }
 
-/* nav */
 
 
 .nav-link {
@@ -36,7 +44,8 @@ li a {
 }
 
 .navbar {
-    z-index: 322;
+    transition: all 0.5s;
+    z-index: 9999322;
 }
 
 .navbar-brand {
@@ -107,14 +116,14 @@ li a {
     border-radius: 2%;
     opacity: 0;
     transform: translateY(100%);
-    transition: all 1s ease-in;
+    transition: all 1s ;
 
 
 }
 
 .fotolayer i {
     color: white;
-    transition: color 0.1s ease-in;
+    transition: color 0.1s ;
 }
 
 .fotolayer i:hover {
@@ -233,7 +242,7 @@ li {
     color: var(--mainColor);
     font-size: 25px;
     padding-bottom: 3%;
-    transition: scale 1s ease-in;
+    transition: scale 1s ;
     transform: scale(1);
 
 
@@ -275,11 +284,11 @@ li {
     bottom: 0%;
     right: 0%;
     left: 0%;
-    z-index: 2222;
+    z-index: 222;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 2%;
     opacity: 0;
-    transition: all 0.1s ease-in;
+    transition: all 0.1s ;
 
 }
 
@@ -287,9 +296,9 @@ li {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    z-index: 222992;
+    z-index: 2229;
     color: white;
-    transition: color 0.1s ease-in;
+    transition: color 0.1s ;
 
 
 }
@@ -404,4 +413,41 @@ form input {
 
 .footer .Icon i:hover {
     color: var(--mainColor);
+}
+.navbar-nav .nav-link.active{
+    color: var(--mainColor)  ;
+}
+.backToTop {
+    z-index: 88888888;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    display: none;
+    
+}
+
+
+.loading{
+z-index: 999999999999;
+display: flex;
+}
+body{
+    overflow: hidden;
+}
+.coloringBox {
+    z-index: 9999999;
+    padding: 20px;
+    top: 30%;
+    left: -157.56px;
+    background-color: aliceblue;
+}
+.coloringBox span{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: red;
+    cursor: pointer;
+}
+.colorBoxIcon{
+    cursor: pointer;
 }

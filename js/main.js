@@ -1,67 +1,129 @@
-var quotes=[
-    {
-        authorName:"― Oscar Wilde",
-        theQuote:"“Be yourself; everyone else is already taken.”"
-    },
-    {
-        authorName:"― Marilyn Monroe",
-        theQuote:"“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.”"
-    },
-    {
-        authorName:"  ― Frank Zappa",
-        theQuote:"“So many books, so little time.”"
-    },
-    {
-        authorName:" ― Albert Einstein",
-        theQuote:" “Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”"
-    },
-    {
-        authorName:"― Marcus Tullius Cicero",
-        theQuote:"  “A room without books is like a body without a soul.”"
-    },
-    {
-        authorName:"― Bernard M. Baruch",
-        theQuote:" “Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.”"
-    },
-    {
-        authorName:"― Mahatma Gandhi",
-        theQuote:" “Be the change that you wish to see in the world.”"
-    },
-    {
-        authorName:"― Mae West",
-        theQuote:"  “You only live once, but if you do it right, once is enough.”"
-    },
-    {
-        authorName:"― Marcus Tullius Cicero",
-        theQuote:"  “A room without books is like a body without a soul.”"
-    },
-    {
-        authorName:"― Dr. Seuss",
-        theQuote:"  “You know you're in love when you cant fall asleep because reality is finally better than your dreams.”"
-    },
-    {
-        authorName:"― William W. Purkey",
-        theQuote:" “You've gotta dance like there's nobody watching,Love like you'll never be hurt, Sing like there's nobody listening, And live like it's heaven on earth.”"
-    },
-    {
-        authorName:"― Robert Frost",
-        theQuote:" “In three words I can sum up everything I've learned about life: it goes on.”"
-    },
-    {
-        authorName:"― Mark Twain",
-        theQuote:"“If you tell the truth, you don't have to remember anything.”"
-    },
-   
-]
+document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener('click', () => {
 
-function getRandomQuote(){
-  var index=Math.floor(Math.random()*quotes.length)
-  if(index)
-document.getElementById("quote").innerHTML=` ${quotes[index].theQuote} 
-</br> ${quotes[index].authorName}`
-}
+        document.querySelector('.active').classList.remove("active")
+        link.classList.add("active")
 
-function changeColor(){
-    var button=document.getElementById("button");
-    button.classList.add("btn-success");
+    });
+
+
+});
+let aboutOffset = $("#about").offset().top
+let navbarHeight = $("nav").outerHeight()
+//a8ir lon l nav lma ascroll
+$(window).scroll(function () {
+
+
+    if ($(window).scrollTop() > (aboutOffset - (navbarHeight / 2))) {
+        $("nav").css("backgroundColor", "#020202")
+        $(".backToTop").fadeIn(500).css("display", "flex")
+
+    } else {
+        $("nav").css("backgroundColor", "transparent")
+        $(".backToTop").fadeOut(500)
+    }
+
+
+})
+
+
+$(window).on("scroll", function () {
+    let position = $(this).scrollTop(); // Current scroll position
+
+    $('section').each(function () {  // Target sections by their 'section' tag
+        let target = $(this).offset().top; // Top offset of the section
+        let height = $(this).outerHeight(); // Height of the section
+        let id = $(this).attr('id'); // The ID of the section
+        //bat2kd an l number l na fi akbr aw eq ll target w f nafs l w2t ykon
+        //  as8r mn l target section kolo l hwa l height bat3o
+        // Check if the current scroll position is within the section's range
+        if (position >= target && position < target + height) {
+            // Add 'active' to the corresponding navbar link
+            $('#topNav ul li a').removeClass('active');
+            $('#topNav ul li a[href="#' + id + '"]').addClass('active');
+
+
+        }
+    });
+});
+
+
+//kol mdos 33la navlink yscroll smoothly
+$("nav #navbarSupportedContent a[href^='#']").on("click", function () {
+    let theAttributehref = $(this).attr("href")
+    let offsetOfSpecificSection = $(theAttributehref).offset().top
+
+    $("html, body").animate({ scrollTop: offsetOfSpecificSection }, 2000);
+
+
+})
+
+//back to top 34n tscroll smothly
+
+$(".backToTop").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 2000);
+})
+
+//bn5fy  l loading spinner
+$(document).ready(function () {
+    $(".loading").fadeOut(1000, function () {
+        $("body").css("overflow", "visible");
+    });
+});
+let colorBoxWidth = $('.coloringBox').outerWidth()
+//bantl3 w nd5al l color picker
+$(".colorBoxIcon").on('click', function () {
+
+    if ($(".coloringBox").css("left") ==  "-" + colorBoxWidth + "px") {
+        $('.coloringBox').animate({ left:  0}, 500)
+
+    }
+    else {
+        $('.coloringBox').animate({ left: -colorBoxWidth }, 500)
+
+    }
+})
+
+
+$('.coloringBox span').on('click', function (e) {
+
+    let clickedSpanColor = $(this).css('background-color')
+    $(':root').css("--mainColor", clickedSpanColor)
+
+})
+
+const option = {
+    strings: [" Developer", " Designer"], // Words to animate
+    typeSpeed: 100,       // Speed of typing each letter (in ms)
+    backSpeed: 100,        // Speed of erasing each letter (in ms)
+    loop: true,           // Repeat the animation infinitely
+
+
+};
+
+const typed = new Typed(".typedAnimation span", option);
+
+
+
+
+let counterOffset = $("#counterID").offset().top
+$(window).scroll(function () {
+    if ($(window).scrollTop() > (counterOffset )) {
+//plugin ll counter  
+let demo = new CountUp('myTargetElement', 0, 200, 0, 2);
+let demo2 = new CountUp('myTargetElement2', 0, 345, 0, 2);
+let demo3 = new CountUp('myTargetElement3', 0, 1800, 0, 2);
+let demo4 = new CountUp('myTargetElement4', 0, 1200, 0, 2);
+
+if (!demo.error) {
+    demo.start();
+    demo2.start();
+    demo3.start();
+    demo4.start();
+} else {
+    console.error(demo.error);
 }
+    }
+    
+
+})

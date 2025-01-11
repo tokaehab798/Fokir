@@ -14,9 +14,9 @@
 
 <body>
 
-    <div class="mainSection">
+    <section id="home" class="mainSection">
         <!-- nav -->
-        <nav class="navbar navbar-expand-lg ">
+        <nav class="navbar navbar-expand-lg fixed-top  " id="topNav">
             <div class="container">
                 <a class="navbar-brand mainColor fw-bolder" href="./index.html">Fokir</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -26,48 +26,67 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0  ">
-                        <li class="nav-item ms-2" >
-                            <a class="nav-link " aria-current="page" href="./index.html" id="Home">Home</a>
+                        <li class="nav-item ms-2">
+                            <a class="nav-link active" aria-current="page" href="#home" id="HomeLink">Home</a>
                         </li>
                         <li class="nav-item  ms-2">
-                            <a class="nav-link" href="#about">About</a>
+                            <a class="nav-link" id="aboutLink" href="#about">About</a>
                         </li>
                         <li class="nav-item  ms-2 ">
 
-                            <a class="nav-link" href="#services">Services</a>
+                            <a class="nav-link" id="servicesLink" href="#services">Services</a>
 
                         </li>
                         <li class="nav-item  ms-2 ">
-                            <a class="nav-link" href="#portfolio">Portfolio</a>
+                            <a class="nav-link" id="PortfolioLink" href="#portfolio">Portfolio</a>
                         </li>
                         <li class="nav-item  ms-2">
-                            <a class="nav-link" href="#testimonial">Testimonial</a>
+                            <a class="nav-link" id="TestimonialLink" href="#testimonial">Testimonial</a>
                         </li>
                         <li class="nav-item  ms-2 ">
-                            <a class="nav-link" href="#Blog">Blog</a>
+                            <a class="nav-link" id="BlogLink" href="#Blog">Blog</a>
                         </li>
                         <li class="nav-item  ms-2">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link" id="contactLink" href="#contact">Contact</a>
                         </li>
                     </ul>
 
                 </div>
             </div>
         </nav>
+        <!-- loading -->
+        <div
+            class=" justify-content-center align-items-center loading position-absolute top-0 w-100 h-100 bg-body-secondary ">
+            <div class=" ">
+                <i class="fa-5x fa-spinner fa-solid text-white fa-spin"></i>
+            </div>
+        </div>
         <!-- layer -->
         <div class="layer d-flex justify-content-center align-items-center">
             <div class="content ">
                 <p class="fw-bold">Hello i'm</p>
                 <h1 class="fw-bolder fa-4x mainColor mb-3">Alex smith</h1>
-                <p class="fw-bold">professional Web Designer</p>
+                <p class="fw-bold typedAnimation">professional Web <span></span></p>
             </div>
 
 
         </div>
+        <div class="coloringBox  position-fixed  ">
+            <h6>Choose Color</h6>
+            <span class="bg-success"></span>
+            <span class=" bg-danger"></span>
+            <span class="bg-primary"></span>
+            <span style="background-color: pink;"></span>
+            <span style="background-color: purple;"></span>
+            <div class="colorBoxIcon">
+                <i class="fa-solid fa-cog bg-body-tertiary position-absolute start-100 p-1 top-0  "></i>
+            </div>
+        </div>
 
-    </div>
+
+    </section>
     <!-- about -->
-    <div id="about" class="p-5 d-flex justify-content-evenly container about">
+    <section id="about" class="p-5 d-flex justify-content-evenly container about">
         <div class="aboutImage  ">
             <div class="frame position-relative ">
                 <div class="position-absolute foto">
@@ -125,11 +144,11 @@
 
             </div>
         </div>
-    </div>
+    </section>
 
     <!--our services  -->
 
-    <div class="p-5 bg-body-tertiary" id="services">
+    <section class="p-5 bg-body-tertiary" id="services">
         <div class="container">
             <div class="tittle">
                 <H2>Our Services</H2>
@@ -162,9 +181,9 @@
             </div>
         </div>
 
-    </div>
+    </section>
     <!-- portfolio -->
-    <div class="p-5 " id="portfolio">
+    <section class="p-5 " id="portfolio">
         <div class="container">
             <div class="tittle">
                 <H2>Our Portfolio</H2>
@@ -198,36 +217,36 @@
 
             </div>
         </div>
-    </div>
+    </section>
     <!-- numbers -->
-    <div class="counter bg-body-tertiary p-5 ">
+    <div id="counterID" class="counter bg-body-tertiary p-5 ">
         <div class="container  d-flex justify-content-center align-items-center">
             <div class="innerContent ">
                 <i class="fa-solid  fa-users "></i>
-                <h6>1430</h6>
+                <h6 id="myTargetElement">200</h6>
                 <p>Page Likes</p>
             </div>
 
             <div class="innerContent ">
                 <i class="fa-regular  fa-copy"></i>
-                <h6>960</h6>
+                <h6 id="myTargetElement2" >345</h6>
                 <p>Great Ideas</p>
             </div>
             <div class="innerContent ">
                 <i class="fa-solid  fa-download"></i>
-                <h6>64</h6>
+                <h6 id="myTargetElement3">1,800</h6>
                 <p>Locations</p>
             </div>
             <div class="innerContent ">
                 <i class="fa-solid fa-coffee"></i>
-                <h6>420</h6>
+                <h6 id="myTargetElement4">1,200</h6>
                 <p>Comments</p>
             </div>
             <div class="clearfix"></div>
         </div>
     </div>
     <!-- Clients Feedback -->
-    <div class="p-5 " id="testimonial">
+    <section class="p-5 " id="testimonial">
         <div class="container">
             <div class="tittle">
                 <H2>Clients Feedback</H2>
@@ -259,9 +278,9 @@
 
             </div>
         </div>
-    </div>
+    </section>
     <!-- our blog -->
-    <div class="p-5 bg-body-tertiary" id="Blog">
+    <section class="p-5 bg-body-tertiary" id="Blog">
         <div class="container">
             <div class="tittle">
                 <H2>Our Blog</H2>
@@ -316,9 +335,9 @@
 
 
         </div>
-    </div>
+    </section>
     <!-- contact -->
-    <div class="p-5 " id="contact">
+    <section class="p-5 " id="contact">
         <div class="container">
             <div class="tittle">
                 <H2>Contact</H2>
@@ -337,7 +356,12 @@
                 </form>
             </div>
         </div>
+    </section>
+    <div class="backToTop  bg-danger justify-content-center align-items-center rounded-5 position-fixed  "
+        style="width: 30px; height: 30px;">
+        <i class=" fa-solid fa-arrow-up text-white "></i>
     </div>
+
     <div class="p-5 bg-dark text-center footer">
         <div class="text-white">
             <div class="Icon mb-3">
@@ -349,7 +373,13 @@
             <p>Copy Right 2018 © By <span class="mainColor">Theme-fair</span> All Rights Reserved</p>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script>
+
+    <script type="module" src="./js/main.js"></script>
+
 
 </body>
 
